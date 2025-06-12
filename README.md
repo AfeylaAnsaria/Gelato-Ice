@@ -1,209 +1,202 @@
-# Gelato Ice - Manage Your Sweet Treats
+# Gelato Ice - Ice Cream Shop Management System
 
 ---
 
-Welcome to **Gelato Ice**, your ultimate gelato shop management system! Gelato Ice helps you organize, plan, and manage your gelato business operations. Whether you're planning seasonal flavors, managing inventory, or tracking customer preferences, this app has got you covered. Built using modern web technologies and a clean, intuitive design, Gelato Ice is here to make gelato business management sweet and stress-free!
+**Made with Love, Served with Freshness — Only at Gelato Ice**
+
+Welcome to **Gelato Ice**, your ultimate ice cream shop management system! Gelato Ice provides the best selection of ice cream with distinctive flavors and helps you manage your ice cream business operations efficiently. Whether you're managing inventory, processing customer orders, or tracking sales, this system has got you covered. Built using modern web technologies with a clean, intuitive design, Gelato Ice makes ice cream business management sweet and stress-free!
 
 ---
 
-## 🍨 Features
+## 🍦 Features
 
-• **Flavor Management**: Organize your gelato flavors and plan seasonal menus for any occasion.
+• **Product Management**: Organize your ice cream catalog with distinctive flavors and seasonal offerings.
 
-• **Inventory Tracking**: Sync your ingredient stock with production schedules to keep track of your supplies.
+• **Shop Management**: Complete ice cream shop operations from inventory to customer service.
 
-• **Customer Preferences**: Categorize customer orders and preferences for personalized service—classic, premium, seasonal, and specialty flavors.
+• **Customer Experience**: User-friendly interface for customers to browse and select their favorite ice cream flavors.
 
-• **Sales Analytics**: Create detailed reports with sales data, popular flavors, and customer insights.
+• **Order Processing**: Streamlined order management system for efficient customer service.
 
-• **Interactive Dashboard**: A sleek and interactive interface that makes it easy to manage all aspects of your gelato business.
+• **Inventory Control**: Track ice cream stock, ingredients, and supplies with real-time updates.
+
+• **Sales Dashboard**: Monitor daily sales, popular flavors, and business performance analytics.
 
 ---
 
 ## 🔥 Technologies Used
 
 ### Frontend:
-◦ **HTML**: Structure of the web pages.
-◦ **CSS**: Styling to make the app look modern and appealing.
-◦ **JavaScript**: Bringing dynamic functionality to the app, including interactive flavor selections.
+◦ **HTML**: Structure of the web pages and user interface.
+◦ **CSS**: Modern styling to create an appealing ice cream shop experience.
+◦ **JavaScript**: Interactive functionality for product browsing and order processing.
+◦ **Bootstrap**: Responsive design framework for mobile-friendly shopping experience.
 
 ### Backend:
-◦ **PHP**: Server-side logic for handling business operations and database interactions.
-◦ **MySQL**: Database management for storing flavor recipes, inventory, and customer data.
+◦ **PHP**: Server-side logic for handling shop operations and customer management.
+◦ **MySQL**: Database management for storing product catalog, orders, and customer data.
 
-### Additional Tools:
-◦ **Bootstrap**: Responsive design framework for mobile-friendly interface.
-◦ **Chart.js**: Data visualization for sales analytics and reporting.
+### Additional Components:
+◦ **AJAX**: Seamless user interactions without page reloads.
+◦ **Chart.js**: Visual analytics for sales reporting and business insights.
 
 ---
 
-## 🚀 Installation Steps
+## 🚀 Installation & Setup
 
-### Prerequisites
+### System Requirements
 - Web server (Apache/Nginx)
 - PHP 7.4 or higher
 - MySQL 5.7 or higher
-- Composer (for dependency management)
+- Modern web browser
 
-### Step-by-Step Installation
+### Installation Steps
 
-1. **Clone the Repository**
+1. **Download & Extract Files**
    ```bash
-   git clone https://github.com/your-username/gelato-ice.git
-   cd gelato-ice
+   # Download the project files
+   # Extract to your web server directory (htdocs/www)
    ```
 
-2. **Install Dependencies**
-   ```bash
-   composer install
-   npm install
-   ```
-
-3. **Database Setup**
+2. **Database Configuration**
    ```sql
-   CREATE DATABASE gelato_ice;
-   USE gelato_ice;
+   CREATE DATABASE gelato_ice_shop;
+   USE gelato_ice_shop;
    ```
    
-   Import the database schema:
+   Import the database:
    ```bash
-   mysql -u username -p gelato_ice < database/schema.sql
+   mysql -u username -p gelato_ice_shop < database/gelato_ice.sql
    ```
 
-4. **Configuration**
-   - Copy `.env.example` to `.env`
-   - Update database credentials in `.env` file:
-   ```
-   DB_HOST=localhost
-   DB_NAME=gelato_ice
-   DB_USER=your_username
-   DB_PASS=your_password
+3. **Configure Database Connection**
+   Edit `config/database.php`:
+   ```php
+   <?php
+   $host = 'localhost';
+   $dbname = 'gelato_ice_shop';
+   $username = 'your_username';
+   $password = 'your_password';
+   ?>
    ```
 
-5. **Set Permissions**
+4. **Set File Permissions**
    ```bash
-   chmod 755 storage/
    chmod 755 uploads/
+   chmod 755 assets/
+   chmod 644 *.php
    ```
 
-6. **Start the Application**
-   ```bash
-   php -S localhost:8000
-   ```
+5. **Access the Application**
+   - Open browser and navigate to: `http://localhost/icecream_shop`
+   - Admin panel: `http://localhost/icecream_shop/admin`
 
 ---
 
-## 📱 Usage Guide
+## 📱 System Overview
 
-### Getting Started
+### Customer Interface
 
-1. **Admin Login**
-   - Navigate to `/admin` 
-   - Use default credentials: `admin@gelato.com` / `password123`
-   - Change password after first login
+**Main Features:**
+- Browse ice cream catalog with high-quality images
+- View detailed product information and flavors
+- Add items to cart and manage orders
+- User-friendly navigation with "Shop Now" functionality
 
-2. **Adding Flavors**
-   - Go to "Flavor Management" section
-   - Click "Add New Flavor"
-   - Fill in flavor details: name, ingredients, cost, seasonal availability
-   - Upload flavor image
+**Key Pages:**
+- `index.php` - Homepage with featured products
+- `view1_product.php` - Product catalog and browsing
+- `product_detail.php` - Individual product information
+- `cart.php` - Shopping cart management
+- `checkout.php` - Order processing
 
-3. **Inventory Management**
-   - Navigate to "Inventory" tab
-   - Add ingredients with quantities and suppliers
-   - Set low-stock alerts
-   - Track ingredient usage per flavor
+### Admin Interface
 
-4. **Customer Orders**
-   - Use "Orders" section to process customer requests
-   - Select flavors, portions, and add-ons
-   - Generate receipts and track order history
-
-5. **Analytics Dashboard**
-   - View sales reports by day/week/month
-   - Monitor popular flavors and peak hours
-   - Export data for external analysis
+**Management Features:**
+- Product catalog management
+- Order processing and tracking
+- Customer data management
+- Sales analytics and reporting
+- Inventory control system
 
 ---
 
-## 🛠️ Configuration Options
+## 🛠️ File Structure
 
-### Flavor Categories
+```
+icecream_shop/
+├── index.php                 # Homepage
+├── view1_product.php         # Product catalog
+├── admin/
+│   ├── dashboard.php         # Admin dashboard
+│   ├── products.php          # Product management
+│   ├── orders.php           # Order management
+│   └── settings.php         # System settings
+├── assets/
+│   ├── css/
+│   │   ├── style.css        # Main stylesheet
+│   │   └── bootstrap.css    # Bootstrap framework
+│   ├── js/
+│   │   ├── main.js          # Main JavaScript
+│   │   └── cart.js          # Shopping cart functions
+│   └── images/
+│       ├── products/        # Product images
+│       └── banners/         # Banner images
+├── config/
+│   ├── database.php         # Database configuration
+│   └── settings.php         # System settings
+├── includes/
+│   ├── header.php           # Common header
+│   ├── footer.php           # Common footer
+│   └── functions.php        # Utility functions
+└── uploads/                 # User uploaded files
+```
+
+---
+
+## 🎨 Customization Options
+
+### Theme Configuration
 ```php
-// config/flavors.php
-return [
-    'categories' => [
-        'classic' => ['Vanilla', 'Chocolate', 'Strawberry'],
-        'premium' => ['Pistachio', 'Tiramisu', 'Salted Caramel'],
-        'seasonal' => ['Pumpkin Spice', 'Eggnog', 'Summer Berry'],
-        'vegan' => ['Coconut', 'Almond', 'Oat Milk Chocolate']
-    ]
+// config/theme.php
+$theme_settings = [
+    'primary_color' => '#FF6B6B',
+    'secondary_color' => '#4ECDC4',
+    'shop_name' => 'Gelato Ice',
+    'tagline' => 'Made with Love, Served with Freshness',
+    'logo' => 'assets/images/logo.png'
 ];
 ```
 
-### Business Settings
+### Product Categories
 ```php
-// config/business.php
-return [
-    'shop_name' => 'Your Gelato Shop',
-    'operating_hours' => '09:00-22:00',
-    'currency' => 'IDR',
-    'tax_rate' => 0.11,
-    'portions' => ['Small', 'Medium', 'Large', 'Family']
+// Ice cream categories
+$categories = [
+    'classic' => 'Classic Flavors',
+    'premium' => 'Premium Selection',
+    'seasonal' => 'Seasonal Specials',
+    'sugar_free' => 'Sugar-Free Options',
+    'vegan' => 'Vegan Friendly'
 ];
 ```
-
----
-
-## 🔧 API Endpoints
-
-### Flavors
-- `GET /api/flavors` - Get all flavors
-- `POST /api/flavors` - Add new flavor
-- `PUT /api/flavors/{id}` - Update flavor
-- `DELETE /api/flavors/{id}` - Remove flavor
-
-### Orders
-- `GET /api/orders` - Get order history
-- `POST /api/orders` - Create new order
-- `GET /api/orders/{id}` - Get order details
-
-### Analytics
-- `GET /api/analytics/sales` - Sales data
-- `GET /api/analytics/flavors` - Flavor popularity
-- `GET /api/analytics/customers` - Customer insights
-
----
-
-## 🎨 Customization
-
-### Themes
-The application supports multiple themes:
-- Light Mode (default)
-- Dark Mode
-- Gelato Theme (colorful)
-
-### Language Support
-Currently supported languages:
-- English (default)
-- Indonesian
-- Italian
 
 ---
 
 ## 📊 Database Schema
 
-### Main Tables
+### Core Tables
+
 ```sql
--- Flavors table
-CREATE TABLE flavors (
+-- Products table
+CREATE TABLE products (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     description TEXT,
-    ingredients JSON,
-    price DECIMAL(10,2),
+    price DECIMAL(10,2) NOT NULL,
     category VARCHAR(50),
-    is_available BOOLEAN DEFAULT TRUE,
+    image VARCHAR(255),
+    stock_quantity INT DEFAULT 0,
+    is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -211,41 +204,149 @@ CREATE TABLE flavors (
 CREATE TABLE orders (
     id INT PRIMARY KEY AUTO_INCREMENT,
     customer_name VARCHAR(100),
-    flavors JSON,
+    customer_email VARCHAR(100),
+    customer_phone VARCHAR(20),
+    order_items JSON,
     total_amount DECIMAL(10,2),
-    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status ENUM('pending', 'completed', 'cancelled')
+    order_status ENUM('pending', 'processing', 'completed', 'cancelled'),
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Categories table
+CREATE TABLE categories (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    description TEXT,
+    is_active BOOLEAN DEFAULT TRUE
 );
 ```
 
 ---
 
-## 🤝 Contributing
+## 🔧 Key Functions
 
-We welcome contributions! Please follow these steps:
+### Product Management
+```php
+// Add new product
+function addProduct($name, $description, $price, $category, $image) {
+    // Implementation for adding products
+}
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+// Get product by ID
+function getProduct($id) {
+    // Retrieve product information
+}
+
+// Update product stock
+function updateStock($product_id, $quantity) {
+    // Update inventory levels
+}
+```
+
+### Order Processing
+```php
+// Process new order
+function processOrder($customer_data, $order_items) {
+    // Handle order creation and processing
+}
+
+// Get order status
+function getOrderStatus($order_id) {
+    // Check current order status
+}
+```
 
 ---
 
-## 📝 License
+## 💼 Business Features
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Sales Analytics
+- Daily, weekly, and monthly sales reports
+- Popular flavor tracking
+- Customer behavior analysis
+- Inventory turnover reports
+
+### Customer Management
+- Customer order history
+- Loyalty program integration
+- Customer feedback system
+- Email notification system
+
+### Inventory Control
+- Real-time stock monitoring
+- Low stock alerts
+- Supplier management
+- Automatic reorder points
 
 ---
 
+## 🔐 Security Features
 
-## 🙏 Acknowledgments
+### Data Protection
+- SQL injection prevention
+- XSS protection
+- CSRF token validation
+- Secure file uploads
 
-- Thanks to all contributors who helped build this project
-- Special thanks to gelato masters who provided flavor expertise
-- Bootstrap team for the amazing UI framework
-- Chart.js team for beautiful data visualizations
+### Admin Security
+- Password hashing
+- Session management
+- Role-based access control
+- Login attempt monitoring
 
 ---
 
-**Made with ❤️ for gelato lovers everywhere**
+## 📱 Mobile Responsive
+
+The system is fully responsive and optimized for:
+- Desktop computers
+- Tablets
+- Mobile phones
+- Various screen sizes
+
+---
+
+## 🤝 Support & Maintenance
+
+### Regular Updates
+- Security patches
+- Feature enhancements
+- Bug fixes
+- Performance optimization
+
+### Technical Support
+- 📧 Email: support@gelatoice.site
+- 📞 Phone: Available during business hours
+- 💬 Live chat: Available on website
+- 📚 Documentation: Comprehensive user guides
+
+---
+
+## 📝 License & Usage
+
+This ice cream shop management system is designed for:
+- Small to medium ice cream shops
+- Gelato stores
+- Dessert cafes
+- Food service businesses
+
+### Usage Rights
+- Commercial use allowed
+- Modification permitted
+- Distribution with attribution
+- No warranty provided
+
+---
+
+## 🎯 Getting Started
+
+1. **Setup**: Follow installation instructions above
+2. **Configuration**: Set up database and basic settings
+3. **Products**: Add your ice cream products and categories
+4. **Testing**: Test the customer ordering process
+5. **Launch**: Deploy to production server
+6. **Monitor**: Track sales and customer satisfaction
+
+---
+
+**🍦 Start serving happiness with Gelato Ice - Where every scoop is made with love! 🍦**
